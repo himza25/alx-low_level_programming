@@ -16,3 +16,4 @@ The program 8-print_base16.c prints all the numbers of base 16 in lowercase.
 The program 9-print_comb.c prints all possible combinations of single-digit numbers.
 Task 10: The program prints all possible different combinations of two digits.
 Task 11: The program prints all possible different combinations of three digits.
+Task 12: The program prints all possible combinations of two two-digit numbers.
