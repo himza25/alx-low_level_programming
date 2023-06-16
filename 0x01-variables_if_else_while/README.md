@@ -14,3 +14,4 @@ The program 5-print_numbers.c prints all single digit numbers of base 10 startin
 The program 6-print_numberz.c prints all single digit numbers of base 10 starting from 0 without using any variable of type char.
 The program 8-print_base16.c prints all the numbers of base 16 in lowercase.
 The program 9-print_comb.c prints all possible combinations of single-digit numbers.
+Task 10: The program prints all possible different combinations of two digits.
