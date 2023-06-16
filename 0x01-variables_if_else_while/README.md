@@ -10,3 +10,4 @@ The program 1-last_digit.c generates a random number and prints the last digit o
 The program 2-print_alphabet.c prints the alphabet in lowercase using the putchar function only.
 The program 3-print_alphabets.c prints the alphabet in lowercase, and then in uppercase using the putchar function only.
 The program 4-print_alphabt.c prints the alphabet in lowercase, skipping "e" and "q".
+The program 5-print_numbers.c prints all single digit numbers of base 10 starting from 0.
