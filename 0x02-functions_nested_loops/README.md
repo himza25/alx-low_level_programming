@@ -7,3 +7,6 @@
 \n## Task 2 - 10 x Alphabet
 - File: 2-print_alphabet_x10.c
 - The function prints 10 times the alphabet in lowercase, each followed by a new line.\n
+\n## Task 3 - islower
+- File: 3-islower.c
+- The function checks if a character is lowercase.\n
