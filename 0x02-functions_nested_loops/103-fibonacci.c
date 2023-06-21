@@ -26,7 +26,7 @@ int main(void)
 }
 
 /**
- * print_number - prints an integer char by char
+ * print_numbers - prints an integer char by char
  * @n: The integer to print
  *
  * Return: void
