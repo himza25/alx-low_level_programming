@@ -18,3 +18,4 @@ Task 8: Function that prints every minute of the day of Jack Bauer
 Task 9: Function that prints the 9 times table
 Task 10: Function that adds two integers
 Task 11: Function that prints all natural numbers from n to 98
+The function print_times_table prints the n times table, starting with 0. If n is greater than 15 or less than 0, the function will not print anything.
