@@ -1,3 +1,4 @@
+#include "main.h"
 #include <stdio.h>
 
 /**
@@ -38,7 +39,7 @@ void fib_split(unsigned long a, unsigned long b, int n)
 
 		carry = (s2 + t2) / 1000000000;
 
-		printf(", %lu%09lu", p1, p2);
+		printf(", %09lu%09lu", p1, p2);
 	}
 	putchar('\n');
 }
