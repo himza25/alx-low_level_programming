@@ -19,7 +19,7 @@ int main(void)
 		b = temp;
 	}
 
-	print_number(sum);
+	print_numbers(sum);
 	_putchar('\n');
 
 	return (0);
@@ -31,11 +31,11 @@ int main(void)
  *
  * Return: void
  */
-void print_number(unsigned long n)
+void print_numbers(unsigned long n)
 {
 	if (n / 10)
 	{
-		print_number(n / 10);
+		print_numbers(n / 10);
 	}
 	_putchar((n % 10) + '0');
 }
