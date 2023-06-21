@@ -2,51 +2,64 @@
 #include <stdio.h>
 
 /**
- * main - prints the first 98 Fibonacci numbers, starting with 1 and 2
- *
- * Return: Always 0.
+ * fib_split - split large Fibonacci numbers and print them
+ * @a: first part of large Fibonacci number
+ * @b: second part of large Fibonacci number
+ * @n: Fibonacci sequence position
+ */
+void fib_split(unsigned long a, unsigned long b, int n)
+{
+	unsigned long s1, s2, s3;
+	unsigned long p1, p2, p3;
+	unsigned long t1, t2;
+
+	p1 = a / 1000000000;
+	p2 = a % 1000000000;
+	p3 = b / 1000000000;
+	s1 = b % 1000000000;
+
+	while (n-- > 0)
+	{
+		t1 = s1;
+		t2 = s2;
+		s1 = p1;
+		s2 = p2;
+		if (t2 + s2 > 999999999)
+		{
+			s3 = (t2 + s2) - 1000000000;
+			p1 = s1 + t1 + 1;
+		}
+		else
+		{
+			s3 = t2 + s2;
+			p1 = s1 + t1;
+		}
+		p2 = s3;
+
+		printf(", %lu", p1);
+		printf("%lu", p2);
+	}
+	putchar('\n');
+}
+
+/**
+ * main - Entry point, prints first 98 Fibonacci numbers
+ * Return: Always 0
  */
 int main(void)
 {
 	unsigned long count, i = 1, j = 2, sum;
-	unsigned long split1, split2, split3;
-	unsigned long split_a, split_b, split_c;
 
-	printf("%lu, %lu, ", i, j);
-	for (count = 2; count < 59; count++)
+	printf("%lu, %lu", i, j);
+	for (count = 2; count < 60; count++)
 	{
 		sum = i + j;
-		printf("%lu, ", sum);
+		printf(", %lu", sum);
 		i = j;
 		j = sum;
 	}
 
-	split_a = i / 1000000000;
-	split_b = i % 1000000000;
-	split_c = j / 1000000000;
-	split1 = j % 1000000000;
+	fib_split(i, j, 98 - 60);
 
-	for (; count < 98; count++)
-	{
-		split2 = split_a;
-		split3 = split_b;
-		split_a = split_c;
-		split_b = split1;
-		if (split_b + split3 > 999999999)
-		{
-			split1 = (split_b + split3) - 1000000000;
-			split_c = split_a + split2 + 1;
-		}
-		else
-		{
-			split1 = split_b + split3;
-			split_c = split_a + split2;
-		}
-
-		if (count != 97)
-			printf("%lu%lu, ", split_c, split1);
-		else
-			printf("%lu%lu\n", split_c, split1);
-	}
 	return (0);
 }
