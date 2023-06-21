@@ -12,6 +12,7 @@ void fib_split(unsigned long a, unsigned long b, int n)
 	unsigned long s1, s2, s3;
 	unsigned long p1, p2;
 	unsigned long t1, t2;
+	unsigned long carry = 0;
 
 	p1 = a / 1000000000;
 	p2 = a % 1000000000;
@@ -24,17 +25,19 @@ void fib_split(unsigned long a, unsigned long b, int n)
 		t2 = s2;
 		s1 = p1;
 		s2 = p2;
-		if (t2 + s2 > 999999999)
+		if (t2 + s2 + carry > 999999999)
 		{
-			s3 = (t2 + s2) - 1000000000;
+			s3 = (t2 + s2 + carry) - 1000000000;
 			p1 = s1 + t1 + 1;
 		}
 		else
 		{
-			s3 = t2 + s2;
+			s3 = t2 + s2 + carry;
 			p1 = s1 + t1;
 		}
 		p2 = s3;
+
+		carry = (s2 + t2) / 1000000000;
 
 		printf(", %lu%010lu", p1, p2);
 	}
