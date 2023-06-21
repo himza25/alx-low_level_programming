@@ -1,5 +1,11 @@
 #include "main.h"
 
+/**
+ * Function to print the sign of a number
+ *
+ * Check the sign of the number
+ */
+
 int print_sign(int n)
 {
 	if (n > 0)

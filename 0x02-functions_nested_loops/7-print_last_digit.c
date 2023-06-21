@@ -1,5 +1,11 @@
 #include "main.h"
 
+/**
+ * Function to print the last digit of a number
+ *
+ * Print last digit of the number
+ */
+
 int print_last_digit(int n)
 {
 	int last = n % 10;
