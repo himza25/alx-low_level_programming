@@ -7,41 +7,41 @@
  * @b: second part of large Fibonacci number
  * @n: Fibonacci sequence position
  */
-void fib_split(unsigned int a, unsigned int b, int n)
+void fib_split(unsigned long a, unsigned long b, int n)
 {
-    unsigned int s1, s2, s3;
-    unsigned int p1, p2;
-    unsigned int t1, t2;
-    unsigned int carry = 0;
+	unsigned long s1, s2, s3;
+	unsigned long p1, p2;
+	unsigned long t1, t2;
+	unsigned long carry = 0;
 
-    p1 = a / 1000000000;
-    p2 = a % 1000000000;
-    s1 = b / 1000000000;
-    s2 = b % 1000000000;
+	p1 = a / 1000000000;
+	p2 = a % 1000000000;
+	s1 = b / 1000000000;
+	s2 = b % 1000000000;
 
-    while (n-- > 0)
-    {
-        t1 = s1;
-        t2 = s2;
-        s1 = p1;
-        s2 = p2;
-        if (t2 + s2 + carry > 999999999)
-        {
-            s3 = (t2 + s2 + carry) - 1000000000;
-            p1 = s1 + t1 + 1;
-        }
-        else
-        {
-            s3 = t2 + s2 + carry;
-            p1 = s1 + t1;
-        }
-        p2 = s3;
+	while (n-- > 0)
+	{
+		t1 = s1;
+		t2 = s2;
+		s1 = p1;
+		s2 = p2;
+		if (t2 + s2 + carry > 999999999)
+		{
+			s3 = (t2 + s2 + carry) - 1000000000;
+			p1 = s1 + t1 + 1;
+		}
+		else
+		{
+			s3 = t2 + s2 + carry;
+			p1 = s1 + t1;
+		}
+		p2 = s3;
 
-        carry = (s2 + t2) / 1000000000;
+		carry = (s2 + t2) / 1000000000;
 
-        printf(", %u%010u", p1, p2);
-    }
-    putchar('\n');
+		printf(", %lu%010lu", p1, p2);
+	}
+	putchar('\n');
 }
 
 /**
@@ -50,18 +50,18 @@ void fib_split(unsigned int a, unsigned int b, int n)
  */
 int main(void)
 {
-    unsigned int count, i = 1, j = 2, sum;
+	unsigned long count, i = 1, j = 2, sum;
 
-    printf("%u, %u", i, j);
-    for (count = 2; count < 60; count++)
-    {
-        sum = i + j;
-        printf(", %u", sum);
-        i = j;
-        j = sum;
-    }
+	printf("%lu, %lu", i, j);
+	for (count = 2; count < 60; count++)
+	{
+		sum = i + j;
+		printf(", %lu", sum);
+		i = j;
+		j = sum;
+	}
 
-    fib_split(i, j, 98 - 60);
+	fib_split(i, j, 98 - 60);
 
-    return (0);
+	return (0);
 }
