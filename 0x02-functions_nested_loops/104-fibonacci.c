@@ -39,7 +39,7 @@ void fib_split(unsigned long a, unsigned long b, int n)
 
 		carry = (s2 + t2) / 1000000000;
 
-		printf(", %09lu%09lu", p1, p2);
+		printf(", %lu, %09lu", p1, p2);
 	}
 	putchar('\n');
 }
@@ -57,11 +57,11 @@ int main(void)
 	{
 		sum = i + j;
 		printf(", %lu", sum);
-		i = j;
+OAOAOAOA		i = j;
 		j = sum;
-	}
+OAOAOAOA	}
 
 	fib_split(i, j, 98 - 96);
 
-	return 0;
-}
+OAOAOAOA	return 0;
+OAOAOAOA}
