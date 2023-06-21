@@ -36,8 +36,7 @@ void fib_split(unsigned long a, unsigned long b, int n)
 		}
 		p2 = s3;
 
-		printf(", %lu", p1);
-		printf("%lu", p2);
+		printf(", %lu%010lu", p1, p2);
 	}
 	putchar('\n');
 }
