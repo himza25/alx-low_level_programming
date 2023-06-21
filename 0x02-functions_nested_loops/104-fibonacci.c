@@ -8,6 +8,7 @@
  */
 void fib_split(unsigned long a, unsigned long b, int n)
 {
+	int i;
 	unsigned long s1, s2, s3;
 	unsigned long p1, p2;
 	unsigned long t1, t2;
@@ -18,7 +19,7 @@ void fib_split(unsigned long a, unsigned long b, int n)
 	s1 = b / 1000000000;
 	s2 = b % 1000000000;
 
-	for (int i = 0; i < n; ++i)
+	for (i = 0; i < n; ++i)
 	{
 		t1 = s1;
 		t2 = s2;
@@ -49,16 +50,15 @@ void fib_split(unsigned long a, unsigned long b, int n)
  */
 int main(void)
 {
+	int i;
 	unsigned long bef = 1;
 	unsigned long aft = 2;
 	unsigned long int l = 1000000000;
 	unsigned long int bef1;
 	unsigned long int bef2;
-	unsigned long int aft1;
-	unsigned long int aft2;
 
 	printf("%lu", bef);
-	for (int i = 1; i < 91; i++)
+	for (i = 1; i < 91; i++)
 	{
 		printf(", %lu", aft);
 		aft += bef;
@@ -67,8 +67,6 @@ int main(void)
 
 	bef1 = (bef / l);
 	bef2 = (bef % l);
-	aft1 = (aft / l);
-	aft2 = (aft % l);
 	
 	fib_split(bef1, bef2, 98 - 91);
 
