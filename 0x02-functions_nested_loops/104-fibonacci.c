@@ -10,13 +10,13 @@
 void fib_split(unsigned long a, unsigned long b, int n)
 {
 	unsigned long s1, s2, s3;
-	unsigned long p1, p2, p3;
+	unsigned long p1, p2;
 	unsigned long t1, t2;
 
 	p1 = a / 1000000000;
 	p2 = a % 1000000000;
-	p3 = b / 1000000000;
-	s1 = b % 1000000000;
+	s1 = b / 1000000000;
+	s2 = b % 1000000000;
 
 	while (n-- > 0)
 	{
