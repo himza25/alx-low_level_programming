@@ -1,4 +1,3 @@
-#include "main.h"
 #include <stdio.h>
 
 /**
@@ -39,7 +38,7 @@ void fib_split(unsigned long a, unsigned long b, int n)
 
 		carry = (s2 + t2) / 1000000000;
 
-		printf(", %lu%010lu", p1, p2);
+		printf(", %lu%09lu", p1, p2);
 	}
 	putchar('\n');
 }
@@ -50,10 +49,10 @@ void fib_split(unsigned long a, unsigned long b, int n)
  */
 int main(void)
 {
-	unsigned long count, i = 1, j = 2, sum;
+	unsigned long count, i = 0, j = 1, sum;
 
 	printf("%lu, %lu", i, j);
-	for (count = 2; count < 60; count++)
+	for (count = 2; count < 98; count++)
 	{
 		sum = i + j;
 		printf(", %lu", sum);
@@ -61,7 +60,7 @@ int main(void)
 		j = sum;
 	}
 
-	fib_split(i, j, 98 - 60);
+	fib_split(i, j, 98 - 96);
 
-	return (0);
+	return 0;
 }
