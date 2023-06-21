@@ -16,6 +16,5 @@ void print_to_98(int n);
 void print_times_table(int n);
 void print_number(int n);
 void print_numbers(unsigned long n);
-void fib_split(unsigned long a, unsigned long b, int n)
 
 #endif /* MAIN_H */
