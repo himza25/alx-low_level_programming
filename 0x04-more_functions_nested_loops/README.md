@@ -1,1 +1,1 @@
-Task 5: This task is about writing a function to print 10 times the numbers, from 0 to 14, followed by a new line. The function 'more_numbers' does not take any arguments and does not return any value. It prints the numbers using the '_putchar' function.
+task 6: This task is about writing a function to draw a straight line in the terminal using the '_putchar' function. The function 'print_line' takes one argument, the number of times the '_' character should be printed, and does not return any value.
