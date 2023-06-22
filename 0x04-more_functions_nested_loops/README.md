@@ -1,1 +1,1 @@
-Task 8: This task is about writing a function to print a square in the terminal using the '_putchar' function. The function 'print_square' takes one argument, the size of the square, and does not return any value.
+Task 9: The task is to write a program that prints the numbers from 1 to 100, but for multiples of three print 'Fizz' instead of the number and for the multiples of five print 'Buzz'. For numbers which are multiples of both three and five print 'FizzBuzz'.
