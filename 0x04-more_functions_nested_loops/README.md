@@ -1,1 +1,1 @@
-Task1: This task is about writing a function to check if a character is a digit (0 through 9). The function '_isdigit' takes an integer (ASCII value) as an argument and returns 1 if it's a digit, or 0 otherwise.
+Task2: This task is about writing a function to multiply two integers. The function 'mul' takes two integers as arguments and returns the result of their multiplication.
