@@ -1,1 +1,1 @@
-task 6: This task is about writing a function to draw a straight line in the terminal using the '_putchar' function. The function 'print_line' takes one argument, the number of times the '_' character should be printed, and does not return any value.
+task 7: This task is about writing a function to draw a diagonal line in the terminal using the '_putchar' function. The function 'print_diagonal' takes one argument, the number of times the '\' character should be printed, and does not return any value.
