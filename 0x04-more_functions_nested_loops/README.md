@@ -1,0 +1,1 @@
+Task 0: This task is about writing a function to check if a character is uppercase. The function '_isupper' takes an integer (ASCII value) as an argument and returns 1 if it's an uppercase letter, or 0 otherwise.
