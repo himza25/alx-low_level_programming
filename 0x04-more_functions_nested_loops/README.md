@@ -1,1 +1,1 @@
-Task 0: This task is about writing a function to check if a character is uppercase. The function '_isupper' takes an integer (ASCII value) as an argument and returns 1 if it's an uppercase letter, or 0 otherwise.
+Task1: This task is about writing a function to check if a character is a digit (0 through 9). The function '_isdigit' takes an integer (ASCII value) as an argument and returns 1 if it's a digit, or 0 otherwise.
