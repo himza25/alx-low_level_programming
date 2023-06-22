@@ -1,1 +1,1 @@
-Task 4: This task is about writing a function to print numbers from 0 to 9, excluding 2 and 4, followed by a new line. The function 'print_most_numbers' does not take any arguments and does not return any value. It prints the numbers using the '_putchar' function.
+Task 5: This task is about writing a function to print 10 times the numbers, from 0 to 14, followed by a new line. The function 'more_numbers' does not take any arguments and does not return any value. It prints the numbers using the '_putchar' function.
