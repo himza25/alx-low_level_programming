@@ -1,1 +1,1 @@
-Task2: This task is about writing a function to multiply two integers. The function 'mul' takes two integers as arguments and returns the result of their multiplication.
+Task 3: This task is about writing a function to print numbers from 0 to 9, followed by a new line. The function 'print_numbers' does not take any arguments and does not return any value. It prints the numbers using the '_putchar' function.
