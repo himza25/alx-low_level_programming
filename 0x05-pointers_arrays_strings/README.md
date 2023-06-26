@@ -2,3 +2,4 @@ Task 0: This task involves creating a function that takes a pointer to an intege
 Task 1: This task involves creating a function that takes two pointers to integers as arguments and swaps the values they point to.
 Task 2: This task involves creating a function that takes a pointer to a string as an argument and returns its length.
 Task 3: This task involves creating a function that takes a pointer to a string as an argument and prints it to stdout, followed by a new line.
+task 4: This task is about creating a function that prints a string in reverse
