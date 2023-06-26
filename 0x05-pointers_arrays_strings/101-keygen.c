@@ -1,26 +1,33 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include "main.h"
 
-#define LENGTH 10
-#define NUMBER_OF_CHARS 62
-
+/**
+ * main - Generates random valid passwords for the program 101-crackme.
+ *
+ * Return: Always 0.
+ */
 int main(void)
 {
-    char characters[NUMBER_OF_CHARS] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-    char password[LENGTH];
-    int i;
+	int i, sum, n;
+	int password[100];
 
-    srand(time(NULL));
+	srand(time(NULL));
 
-    for (i = 0; i < LENGTH - 1; i++)
-    {
-        password[i] = characters[rand() % NUMBER_OF_CHARS];
-    }
+	for (i = 0, sum = 0; sum < (2772 - 122); i++)
+	{
+		n = rand() % 94 + 33;
+		password[i] = n;
+		sum += n;
+	}
+	n = 2772 - sum;
+	password[i] = n;
 
-    password[LENGTH - 1] = '\0';
+	for (i = 0; password[i]; i++)
+	{
+		_putchar(password[i]);
+	}
 
-    printf("%s\n", password);
-
-    return (0);
+	return (0);
 }
