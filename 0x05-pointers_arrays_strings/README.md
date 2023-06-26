@@ -9,3 +9,4 @@ Task 7: This task is about creating a function that prints half of a string, fol
 Task 8: This task is about creating a function that prints n elements of an array of integers, followed by a new line
 Task 9: This task is about creating a function that copies the string pointed to by src, including the terminating null byte (\0), to the buffer pointed to by dest.
 Task 10: This task is about creating a function that converts a string to an integer considering all the - and + signs before the number.
+Task 11: This task involves creating a program that generates random valid passwords for the 101-crackme program.
