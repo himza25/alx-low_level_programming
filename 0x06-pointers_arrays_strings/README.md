@@ -8,3 +8,4 @@ Task 6: This task is about writing a function that capitalizes all words of a st
 - Task 7: A function that encodes a string into 1337. Letters substitutions are as follows: a and A should be replaced by 4; e and E should be replaced by 3; o and O should be replaced by 0; t and T should be replaced by 7; l and L should be replaced by 1. The prototype of the function is 'char *leet(char *);'. The implementation is in '7-leet.c'.
 - Task 8: A function that encodes a string using rot13. The prototype of the function is 'char *rot13(char *);'. The implementation is in '100-rot13.c'.
 - Task 9: A function that prints an integer. The prototype of the function is 'void print_number(int n);'. The implementation is in '101-print_number.c'.
+- Task 10: Modifying the value of an array element using pointer arithmetic without using the array variable or modifying the pointer variable. The implementation is in '102-magic.c'.
