@@ -14,9 +14,9 @@ char *cap_string(char *str)
 	{
 		/* Check if character is a word separator */
 		while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n' || str[i] == ',' ||
-		       str[i] == ';' || str[i] == '.' || str[i] == '!' || str[i] == '?' ||
-		       str[i] == '"' || str[i] == '(' || str[i] == ')' || str[i] == '{' ||
-		       str[i] == '}')
+			str[i] == ';' || str[i] == '.' || str[i] == '!' || str[i] == '?' ||
+			str[i] == '"' || str[i] == '(' || str[i] == ')' || str[i] == '{' ||
+			str[i] == '}')
 		{
 			i++;
 
