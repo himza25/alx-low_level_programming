@@ -1,5 +1,11 @@
 #include <stdio.h>
 
+/**
+ * main - Modifies the value of an array element using pointer arithmetic.
+ *        Does not use the array variable or modify the pointer variable.
+ *        Prints the value of the third element of the array (index 2).
+ * Return: Always 0 (Success)
+ */
 int main(void)
 {
 	int n;
