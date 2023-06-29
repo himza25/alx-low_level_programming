@@ -9,26 +9,36 @@
 char *cap_string(char *str)
 {
 	int i = 0;
+	int capitalize_next = 1;
 
-	while (str[i])
+	while (str[i] != '\0')
 	{
-		/* Check if character is a word separator */
-		while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n' || str[i] == ',' ||
-			str[i] == ';' || str[i] == '.' || str[i] == '!' || str[i] == '?' ||
-			str[i] == '"' || str[i] == '(' || str[i] == ')' || str[i] == '{' ||
-			str[i] == '}')
-		{
-			i++;
+	if (capitalize_next && (str[i] >= 'a' && str[i] <= 'z'))
+		str[i] -= 32;
 
-			/* If next character is lower case */
-			if (str[i] >= 'a' && str[i] <= 'z')
-			{
-				str[i] = str[i] - 'a' + 'A';
-			}
-		}
+	capitalize_next = 0;
 
-		i++;
+	switch (str[i])
+	{
+		case ' ':
+		case '\t':
+		case '\n':
+		case ',':
+		case ';':
+		case '.':
+		case '!':
+		case '?':
+		case '\"':
+		case '(':
+		case ')':
+		case '{':
+ 		case '}':
+		capitalize_next = 1;
+		break;
 	}
 
-	return (str);
+	i++;
+	}
+
+	return str;
 }
