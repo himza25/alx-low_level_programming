@@ -32,7 +32,7 @@ char *cap_string(char *str)
 		case '(':
 		case ')':
 		case '{':
- 		case '}':
+		case '}':
 		capitalize_next = 1;
 		break;
 	}
@@ -40,5 +40,5 @@ char *cap_string(char *str)
 	i++;
 	}
 
-	return str;
+	return (str);
 }
