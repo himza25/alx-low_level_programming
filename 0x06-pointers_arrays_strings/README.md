@@ -9,3 +9,4 @@ Task 6: This task is about writing a function that capitalizes all words of a st
 - Task 8: A function that encodes a string using rot13. The prototype of the function is 'char *rot13(char *);'. The implementation is in '100-rot13.c'.
 - Task 9: A function that prints an integer. The prototype of the function is 'void print_number(int n);'. The implementation is in '101-print_number.c'.
 - Task 10: Modifying the value of an array element using pointer arithmetic without using the array variable or modifying the pointer variable. The implementation is in '102-magic.c'.
+Task 11: This code contains two functions implemented in C: 'rev_string' and 'infinite_add'. The 'rev_string' function reverses an array, while the 'infinite_add' function adds two numbers together. These functions can be used as utility functions in various C programs.
