@@ -1,1 +1,1 @@
-Task 11: This task is about creating a function that performs addition of two numbers represented as strings with some constraints. This function is an implementation of infinite precision arithmetic in C.
+Task 12: This task involves creating a function that prints a buffer.
