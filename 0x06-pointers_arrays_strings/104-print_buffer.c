@@ -1,34 +1,48 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
- * print_buffer - prints a buffer with a specific format
- * @b: pointer to the buffer
- * @size: the size of the buffer
+ * print_buffer - prints a buffer
+ * @b: buffer
+ * @size: size
  */
 void print_buffer(char *b, int size)
 {
-	int i, j;
+	int offset, byte_index, chunk_size;
 
-	for (i = 0; i < size; i += 10)
+	offset = 0;
+
+	if (size <= 0)
 	{
-		printf("%08x: ", i);
-		for (j = 0; j < 10; j++)
+		printf("\n");
+		return;
+	}
+	while (offset < size)
+	{
+		chunk_size = size - offset < 10 ? size - offset : 10;
+		printf("%08x: ", offset);
+		for (byte_index = 0; byte_index < 10; byte_index++)
 		{
-			if (j % 2 == 0)
-				printf(" ");
-			if (i + j < size)
-				printf("%02x", *(b + i + j));
+			if (byte_index < chunk_size)
+				printf("%02x", *(b + offset + byte_index));
 			else
 				printf("  ");
+			if (byte_index % 2)
+			{
+				printf(" ");
+			}
 		}
-		printf(" ");
-		for (j = 0; j < 10; j++)
+		for (byte_index = 0; byte_index < chunk_size; byte_index++)
 		{
-			if (i + j < size)
-				putchar(isprint(*(b + i + j)) ? *(b + i + j) : '.');
+			int c = *(b + offset + byte_index);
+
+			if (c < 32 || c > 132)
+			{
+				c = '.';
+			}
+			printf("%c", c);
 		}
-		putchar('\n');
+		printf("\n");
+		offset += 10;
 	}
-	if (size <= 0)
-		putchar('\n');
 }
