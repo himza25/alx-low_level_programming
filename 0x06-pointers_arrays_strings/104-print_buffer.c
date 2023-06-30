@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * print_buffer - prints a buffer with a specific format.
- * @b: buffer.
- * @size: size of the buffer.
+ * print_buffer - prints a buffer with a specific format
+ * @b: pointer to the buffer
+ * @size: the size of the buffer
  */
 void print_buffer(char *b, int size)
 {
@@ -14,9 +14,9 @@ void print_buffer(char *b, int size)
 		printf("%08x: ", i);
 		for (j = 0; j < 10; j++)
 		{
-			if (j % 2 == 0 && j != 0)
+			if (j % 2 == 0)
 				printf(" ");
-			if (j + i < size)
+			if (i + j < size)
 				printf("%02x", *(b + i + j));
 			else
 				printf("  ");
@@ -24,16 +24,11 @@ void print_buffer(char *b, int size)
 		printf(" ");
 		for (j = 0; j < 10; j++)
 		{
-			if (j + i < size)
-			{
-				if (*(b + i + j) >= 31 && *(b + i + j) <= 126)
-					printf("%c", *(b + i + j));
-				else
-					printf(".");
-			}
+			if (i + j < size)
+				putchar(isprint(*(b + i + j)) ? *(b + i + j) : '.');
 		}
-		printf("\n");
+		putchar('\n');
 	}
 	if (size <= 0)
-		printf("\n");
+		putchar('\n');
 }
