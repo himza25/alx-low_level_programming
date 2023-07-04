@@ -1,1 +1,1 @@
-Task 0: This task involves recreating the 'memset' function from the C standard library, but without using the standard library. The function fills the first n bytes of the memory area pointed to by a character pointer with a specific constant byte.
+Task 1: This task is about implementing the memcpy function which copies a specified number bytes from source memory area to destination memory area.
