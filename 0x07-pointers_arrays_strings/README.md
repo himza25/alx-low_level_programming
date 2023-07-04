@@ -1,2 +1,3 @@
 Task 1: This task is about implementing the memcpy function which copies a specified number bytes from source memory area to destination memory area.
 Task 2: The task is about implementing a function, _strchr, which locates a character in a string. It returns a pointer to the first occurrence of the character in the string, or NULL if the character is not found.
+Task 3: This task involves implementing a function that gets the length of a prefix substring. The function _strspn takes an initial string and a substring, returning the number of bytes in the initial segment of the initial string which consist only of bytes from the substring. This is similar to the standard library function 'strspn'.
