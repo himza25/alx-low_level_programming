@@ -1,3 +1,4 @@
 Task 0: This task involves creating a recursive function '_puts_recursion' that prints a string, followed by a new line. The task is similar to the functionality of the 'puts' function from the standard library.
 Task 1: This task involves creating a recursive function '_print_rev_recursion' that prints a string in reverse. This is a demonstration of how recursion can be used to reverse the order of operations on a data structure.
 Task 2: The task involves implementing a function that returns the length of a string using recursion. This is similar to the standard library function 'strlen'.
+Task 3: The task involves implementing a function that returns the factorial of a given number using recursion. If n is lower than 0, the function should return -1 to indicate an error. Factorial of 0 is 1.
