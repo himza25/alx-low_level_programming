@@ -5,3 +5,4 @@ Task 3: The task involves implementing a function that returns the factorial of 
 Task 4: The task involves implementing a function that returns the value of x raised to the power of y using recursion. If y is lower than 0, the function should return -1.
 Task 5: The task involves implementing a function that returns the natural square root of a number using recursion. If n does not have a natural square root, the function should return -1.
 Task 6: The task involves implementing a function that checks if the input integer is a prime number using recursion. If the integer is prime, the function should return 1, otherwise it should return 0.
+Task 7: The task involves implementing a function that checks if a string is a palindrome using recursion. If the string is a palindrome, the function should return 1, otherwise it should return 0. An empty string is considered as a palindrome.
