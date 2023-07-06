@@ -4,3 +4,4 @@ Task 2: The task involves implementing a function that returns the length of a s
 Task 3: The task involves implementing a function that returns the factorial of a given number using recursion. If n is lower than 0, the function should return -1 to indicate an error. Factorial of 0 is 1.
 Task 4: The task involves implementing a function that returns the value of x raised to the power of y using recursion. If y is lower than 0, the function should return -1.
 Task 5: The task involves implementing a function that returns the natural square root of a number using recursion. If n does not have a natural square root, the function should return -1.
+Task 6: The task involves implementing a function that checks if the input integer is a prime number using recursion. If the integer is prime, the function should return 1, otherwise it should return 0.
