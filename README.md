@@ -1,1 +1,1 @@
-Task 1: This project involves creating a static library in C with a number of standard functions implemented under specific constraints, such as no use of loops, no global variables, no standard library functions, and more.
+Task 0: This task is about creating a program that prints its own name.
