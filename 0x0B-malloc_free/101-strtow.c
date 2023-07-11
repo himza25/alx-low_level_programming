@@ -2,58 +2,95 @@
 #include <stdlib.h>
 
 /**
- * count_words - Helper function to count the number of words in a string
- * @str: The string to count words in
+ * wordlen - Finds the length of a word
+ * @str: The word as a string
+ *
+ * Return: The length of the word
+ */
+static int wordlen(char *str)
+{
+	int len = 0;
+
+	while (*(str + len) && *(str + len) != ' ')
+		len++;
+	return (len);
+}
+
+/**
+ * wordcount - Counts the number of words in a string
+ * @str: The string to be searched
  *
  * Return: The number of words in the string
  */
-static unsigned int count_words(char *str)
+static int wordcount(char *str)
 {
-	unsigned int count = 0, i = 0;
+	int count = 0, inword = 0;
 
-	while (str[i])
-	{
-		if (str[i] == ' ' && str[i + 1] != ' ' && str[i + 1] != '\0')
-			count++;
-		i++;
-	}
+	do {
+		switch (*str)
+		{
+			case ' ':
+			case '\t':
+			case '\n':
+			case '\0':
+				if (inword)
+				{
+					inword = 0;
+					count++;
+				}
+				break;
+			default:
+				inword = 1;
+		}
+	} while (*str++);
 	return (count);
 }
 
 /**
- * strtow - Splits a string into words.
- * @str: The string to split
+ * strtow - Splits a string into words
+ * @str: The string to be splitted
  *
- * Return: If str == NULL, str == "", or the function fails - NULL.
+ * Return: If str == NULL or str == "", or the function fails - NULL.
  *         Otherwise - a pointer to the array of words.
  */
 char **strtow(char *str)
 {
-	char **words, *token;
-	unsigned int count, i = 0;
+	char **words = NULL;
+	int wc = 0, wi = 0, li = 0;
 
 	if (str == NULL || *str == '\0')
 		return (NULL);
-
-	count = count_words(str);
-	words = malloc(sizeof(char *) * (count + 1));
+	wc = wordcount(str);
+	if (wc == 0)
+		return (NULL);
+	words = malloc((wc + 1) * sizeof(char *));
 	if (words == NULL)
 		return (NULL);
-
-	token = strtok(str, " ");
-	while (token != NULL)
+	while (*str)
 	{
-		words[i] = malloc(sizeof(char) * (strlen(token) + 1));
-		if (words[i] == NULL)
+		if (*str >= '!')
 		{
-			free(words);
-			return (NULL);
+			if (words[wi] == NULL)
+			{
+				words[wi] = malloc((wordlen(str) + 1) * sizeof(char));
+				if (words[wi] == NULL)
+				{
+					while (--wi >= 0)
+						free(words[wi]);
+					free(words);
+					return (NULL);
+				}
+			}
+			words[wi][li] = *str;
+			words[wi][++li] = '\0';
 		}
-		words[i] = token;
-		token = strtok(NULL, " ");
-		i++;
+		else if (words[wi] != NULL && li > 0)
+		{
+			wi++;
+			li = 0;
+		}
+		str++;
 	}
-	words[i] = NULL;
-
+	words[wi] = NULL;
 	return (words);
 }
