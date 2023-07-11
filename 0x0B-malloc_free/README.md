@@ -3,3 +3,4 @@ Task 1: This task is about creating a function that returns a pointer to a newly
 Task 2 :This task is about creating a function that concatenates two strings. The function prototype is: char *str_concat(char *s1, char *s2); If NULL is passed, it is treated as an empty string. The function returns NULL on failure.
 Task 3 : This task is about creating a function that returns a pointer to a 2 dimensional array of integers. The function prototype is: int **alloc_grid(int width, int height); Each element of the grid is initialized to 0. If width or height is 0 or negative, it returns NULL. The function returns NULL on failure.
 Task 4 : involves creating a function that frees a 2D grid which was previously created by the alloc_grid function. The function prototype is: void free_grid(int **grid, int height);
+Task 5 :  involves creating a function that concatenates all the arguments of your program. The function prototype is: char *argstostr(int ac, char **av);
