@@ -1,0 +1,1 @@
+Task 0: This task is about creating a function that creates an array of characters, and initializes it with a specific character. The function prototype is: char *create_array(unsigned int size, char c); This function returns NULL if size = 0 or if it fails to allocate memory. Otherwise, it returns a pointer to the array.
