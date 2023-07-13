@@ -1,1 +1,2 @@
 Task 0: In the first task, we will implement a function called 'malloc_checked' that allocates memory using malloc and handles allocation failures.
+Task 1: This task is about creating a function that concatenates two strings. The function will allocate a new memory space that contains the first string, followed by the first n bytes of the second string. If n is greater or equal to the length of the second string, the entire second string will be used. If NULL is passed, it is treated as an empty string.
