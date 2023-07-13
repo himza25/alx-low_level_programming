@@ -4,6 +4,10 @@
 
 #define ERR_MSG "Error"
 
+int is_digit(char *s);
+void errors(void);
+int *multiplication_logic(char *s1, char *s2, int len1, int len2);
+void print_product(int *result, int len);
 
 /**
  * is_digit - checks if a string contains a non-digit char
@@ -25,23 +29,6 @@ int is_digit(char *s)
 }
 
 /**
- * _strlen - returns the length of a string
- * @s: string to evaluate
- *
- * Return: the length of the string
- */
-int _strlen(char *s)
-{
-	int i = 0;
-
-	while (s[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
-}
-
-/**
  * errors - handles errors for main
  */
 void errors(void)
@@ -54,15 +41,15 @@ void errors(void)
  * multiplication_logic - performs the actual multiplication logic
  * @s1: first number as a string
  * @s2: second number as a string
- * 
+ * @len1: length of first number
+ * @len2: length of second number
+ *
  * Return: pointer to an array with the result
  */
-int *multiplication_logic(char *s1, char *s2)
+int *multiplication_logic(char *s1, char *s2, int len1, int len2)
 {
-	int len1, len2, len, i, carry, digit1, digit2, *result;
+	int len, i, carry, digit1, digit2, *result;
 
-	len1 = _strlen(s1);
-	len2 = _strlen(s2);
 	len = len1 + len2 + 1;
 	result = malloc(sizeof(int) * len);
 	if (!result)
@@ -83,7 +70,7 @@ int *multiplication_logic(char *s1, char *s2)
 		if (carry > 0)
 			result[len1 + len2 + 1] += carry;
 	}
-	return result;
+	return (result);
 }
 
 /**
@@ -94,6 +81,7 @@ int *multiplication_logic(char *s1, char *s2)
 void print_product(int *result, int len)
 {
 	int i, a = 0;
+
 	for (i = 0; i < len - 1; i++)
 	{
 		if (result[i])
@@ -116,15 +104,16 @@ void print_product(int *result, int len)
 int main(int argc, char *argv[])
 {
 	char *s1, *s2;
-	int *result, len;
+	int *result, len1, len2;
 
 	if (argc != 3 || !is_digit(argv[1]) || !is_digit(argv[2]))
 		errors();
 	s1 = argv[1];
 	s2 = argv[2];
-	result = multiplication_logic(s1, s2);
-	len = _strlen(s1) + _strlen(s2) + 1;
-	print_product(result, len);
+	len1 = _strlen(s1);
+	len2 = _strlen(s2);
+	result = multiplication_logic(s1, s2, len1, len2);
+	print_product(result, len1 + len2 + 1);
 	free(result);
 	return (0);
 }
