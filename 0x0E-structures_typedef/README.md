@@ -1,1 +1,1 @@
-Task 0 : This program includes a new structure type struct dog with the elements: name, age, and owner.
+Task 1 : This task is about initializing a structure of type dog in C.
