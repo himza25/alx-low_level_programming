@@ -1,1 +1,1 @@
-Task 0 : This project is about creating a function that prints a name. The function takes a string and a function pointer as parameters. The function pointer takes a string as a parameter. If both the string and the function pointer are not null, the function pointer is called with the string as the parameter.
+Task 1 : This project is about creating a function that executes a function given as a parameter on each element of an array.
