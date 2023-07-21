@@ -1,1 +1,1 @@
-Task 0 : This repository contains the C tasks for the variadic functions project.
+Task 1 : This repository contains tasks involving variadic functions in C. The primary function created is print_numbers, which prints any number of integers separated by a specified separator.
