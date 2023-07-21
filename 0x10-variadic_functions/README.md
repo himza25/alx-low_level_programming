@@ -1,1 +1,1 @@
-Task 1 : This repository contains tasks involving variadic functions in C. The primary function created is print_numbers, which prints any number of integers separated by a specified separator.
+Task 2 : This task involves writing a function that prints strings, with a specified separator. If one of the string is NULL, the function prints (nil) instead.
