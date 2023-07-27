@@ -2,3 +2,4 @@
 Task 1 : involves creating a function that returns the number of elements in a list_t list in C programming.
 Task 2 : involves creating a function that adds a new node at the beginning of a list_t list in C programming.
 Task 3 : involves creating a function that adds a new node at the end of a list_t list in C programming.
+Task 4 : involves creating a function that frees a list_t list in C programming.
