@@ -1,0 +1,1 @@
+ Task 0 involves creating a function that prints all the elements of a list_t list in C programming. The function prints the elements, checks if the string is NULL and if so, it prints [0] (nil). It also returns the number of nodes.
