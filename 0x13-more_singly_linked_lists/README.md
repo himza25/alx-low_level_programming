@@ -7,3 +7,4 @@ Task 5 : The task is about creating a function that frees a listint_t list and s
 Task 6: Added a function to remove the head node of a linked list and return its data.
 Task 7 : This task is about creating a function that returns the nth node of a listint_t linked list in C.
 Task 8 : This task is about creating a function that returns the sum of all the data of a listint_t linked list in C.
+Task 9 : This task is about creating a function that inserts a new node at a given position in a listint_t linked list in C.
