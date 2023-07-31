@@ -12,3 +12,4 @@ Task 10 : This task is about creating a function that deletes the node at a spec
 Task 11 : This task is about creating a function to reverse a linked list.
 Task 12 : This task is about creating a function that prints a listint_t linked list in C.
 Task 13: function that safely frees a listint_t list.
+Task 14: function that finds a loop in a linked list.
