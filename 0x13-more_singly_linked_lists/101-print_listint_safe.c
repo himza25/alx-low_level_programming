@@ -29,9 +29,15 @@ size_t print_listint_safe(const listint_t *head)
 				start = start->next;
 				count++;
 			}
-			printf("[%p] %d\n", (void *)slow_p, slow_p->n);
-			printf("-> [%p] %d\n", (void *)slow_p->next, slow_p->next->n);
-			return (count + 1);
+
+			do {
+				printf("[%p] %d\n", (void *)slow_p, slow_p->n);
+				slow_p = slow_p->next;
+				count++;
+			} while (slow_p != fast_p);
+			printf("-> [%p] %d\n", (void *)slow_p, slow_p->n);
+
+			return (count);
 		}
 	}
 
