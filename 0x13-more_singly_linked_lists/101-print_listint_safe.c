@@ -1,52 +1,89 @@
 #include "lists.h"
 #include <stdio.h>
-#include <stdlib.h>
+
+size_t count_unique_nodes_in_loop(const listint_t *head);
+size_t print_listint_safely(const listint_t *head);
 
 /**
- * print_listint_safe - prints all elements in a linked list
- * @head: pointer to the head of the list
- * Return: the number of nodes
+ * count_unique_nodes_in_loop - Counts the unique nodes
+ * in a looped listint_t linked list.
+ * @head: A pointer to the head of the listint_t to check.
+ *
+ * Return: If the list is not looped - 0.
+ * Otherwise - the number of unique nodes in the list.
  */
-size_t print_listint_safe(const listint_t *head)
+size_t count_unique_nodes_in_loop(const listint_t *head)
 {
-	size_t count = 0;
-	const listint_t *slow_p = head, *fast_p = head;
+	const listint_t *slow_pointer, *fast_pointer;
+	size_t node_count = 1;
 
-	if (!head)
-		exit(98);
+	if (head == NULL || head->next == NULL)
+		return (0);
 
-	while (slow_p && fast_p && fast_p->next)
+	slow_pointer = head->next;
+	fast_pointer = (head->next)->next;
+
+	while (fast_pointer != NULL)
 	{
-		slow_p = slow_p->next;
-		fast_p  = fast_p->next->next;
-		if (slow_p == fast_p)
+		if (slow_pointer == fast_pointer)
 		{
-			const listint_t *start = head;
-
-			while (start != slow_p)
+			slow_pointer = head;
+			while (slow_pointer != fast_pointer)
 			{
-				printf("[%p] %d\n", (void *)start, start->n);
-				start = start->next;
-				count++;
+				node_count++;
+				slow_pointer = slow_pointer->next;
+				fast_pointer = fast_pointer->next;
 			}
 
-			do {
-				printf("[%p] %d\n", (void *)slow_p, slow_p->n);
-				slow_p = slow_p->next;
-				count++;
-			} while (slow_p != fast_p);
-			printf("-> [%p] %d\n", (void *)slow_p, slow_p->n);
+			slow_pointer = slow_pointer->next;
+			while (slow_pointer != fast_pointer)
+			{
+				node_count++;
+				slow_pointer = slow_pointer->next;
+			}
 
-			return (count);
+			return (node_count);
+		}
+
+		slow_pointer = slow_pointer->next;
+		fast_pointer = fast_pointer->next ?
+		(fast_pointer->next)->next : fast_pointer->next;
+	}
+
+	return (0);
+}
+
+/**
+ * print_listint_safely - Prints a listint_t list safely.
+ * @head: A pointer to the head of the listint_t list.
+ *
+ * Return: The number of nodes in the list.
+ */
+size_t print_listint_safely(const listint_t *head)
+{
+	size_t nodes, idx = 0;
+
+	nodes = count_unique_nodes_in_loop(head);
+
+	if (nodes == 0)
+	{
+		for (; head != NULL; nodes++)
+		{
+			printf("[%p] %d\n", (void *)head, head->n);
+			head = head->next;
 		}
 	}
 
-	while (head)
+	else
 	{
-		printf("[%p] %d\n", (void *)head, head->n);
-		head = head->next;
-		count++;
+		for (idx = 0; idx < nodes; idx++)
+		{
+			printf("[%p] %d\n", (void *)head, head->n);
+			head = head->next;
+		}
+
+		printf("-> [%p] %d\n", (void *)head, head->n);
 	}
 
-	return (count);
+	return (nodes);
 }
