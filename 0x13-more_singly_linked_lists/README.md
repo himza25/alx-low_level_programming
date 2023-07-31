@@ -10,3 +10,4 @@ Task 8 : This task is about creating a function that returns the sum of all the 
 Task 9 : This task is about creating a function that inserts a new node at a given position in a listint_t linked list in C.
 Task 10 : This task is about creating a function that deletes the node at a specific index in a listint_t linked list in C.
 Task 11 : This task is about creating a function to reverse a linked list.
+Task 12 : This task is about creating a function that prints a listint_t linked list in C.
