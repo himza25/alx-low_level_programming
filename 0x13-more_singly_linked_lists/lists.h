@@ -33,5 +33,7 @@ size_t free_listint_safe(listint_t **h);
 listint_t *find_listint_loop(listint_t *head);
 size_t find_list_length(const listint_t *head);
 int _putchar(char c);
+void print_address(unsigned long int address);
+void print_int(int n);
 
 #endif /* LISTS_H */
