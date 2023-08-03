@@ -4,3 +4,4 @@ Task 2 : This task involves creating a function to get the value of a bit at a g
 Task 3 : This task involves creating a function to set the value of a bit at a given index to 1.
 Task 4 : This task involves creating a function to set the value of a bit at a given index to 0.
 Task 5 : This task involves creating a function to count the number of bits needed to flip to get from one number to another.
+Task 6 : This task involves creating a function to determine the system's endianness.
