@@ -1,2 +1,3 @@
 Task 0 : This task involves creating a function that prints all the elements of a doubly linked list.
 Task 1 involves creating a function that returns the number of elements in a doubly linked list.
+Task 2 involves creating a function that adds a new node at the beginning of a doubly linked list.
