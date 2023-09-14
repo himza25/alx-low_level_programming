@@ -6,3 +6,4 @@ Task 4 involves creating a function that frees a doubly linked list.
 Task 5 involves creating a function that returns the nth node of a doubly linked list.
 Task 6 involves creating a function that returns the sum of all the data of a doubly linked list.
 Task 7 involves creating a function that inserts a new node at a given position in a doubly linked list.
+Task 8 involves creating a function that deletes the node at a specific index of a doubly linked list.
