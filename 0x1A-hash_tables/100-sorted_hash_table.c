@@ -1,4 +1,3 @@
-Impossible de créer, modifier ou importer … Vous n'avez pas assez d'espace de stockage pour créer, modifier ou importer des fichiers. Profitez de 100 Go de stockage pour 19,00 MAD 4,75 MAD/mois pendant 3 mois.
 #include "hash_tables.h"
 
 shash_table_t *shash_table_create(unsigned long int size);
