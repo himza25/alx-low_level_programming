@@ -1,30 +1,57 @@
 #include "hash_tables.h"
+#include "stdio.h"
+
+int check_hash_table(hash_node_t **hash, unsigned long int size);
 
 /**
- * hash_table_print - Prints a hash table
- * @ht: The hash table
- */
+ * hash_table_print - prints a hash table.
+ * @ht: the hash table
+*/
 void hash_table_print(const hash_table_t *ht)
 {
-	unsigned long int i;
-	hash_node_t *temp;
-	int flag = 0;
+	int i = 0, check, prchick = 0;
+	hash_node_t *set;
 
-	if (ht == NULL)
+	if (!ht)
 		return;
-
-	printf("{");
-	for (i = 0; i < ht->size; i++)
+	check = check_hash_table(ht->array, ht->size);
+	fprintf(stdout, "{");
+	while (i < (int)ht->size)
 	{
-		temp = ht->array[i];
-		while (temp)
+		set = ht->array[i];
+		while (set)
 		{
-			if (flag == 1)
-				printf(", ");
-			printf("'%s': '%s'", temp->key, temp->value);
-			flag = 1;
-			temp = temp->next;
+			fprintf(stdout, "'%s': '%s'", set->key, set->value);
+			prchick++;
+			if (prchick != check)
+				fprintf(stdout, ", ");
+			set = set->next;
 		}
+		i++;
 	}
-	printf("}\n");
+	fprintf(stdout, "}\n");
+}
+
+/**
+ * check_hash_table - check the dictionary of hash table
+ * @hash: the array
+ * @size: size of array
+ * Return: the number of elements
+*/
+int check_hash_table(hash_node_t **hash, unsigned long int size)
+{
+	int check = 0, i = 0;
+	hash_node_t *set;
+
+	while (i < (int)size)
+	{
+		set = hash[i];
+		while (set)
+		{
+			check++;
+			set = set->next;
+		}
+		i++;
+	}
+	return (check);
 }
