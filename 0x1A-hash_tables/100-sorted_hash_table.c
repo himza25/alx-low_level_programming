@@ -9,6 +9,7 @@
 shash_node_t *create_new_node(const char *key, const char *value)
 {
 	shash_node_t *new_node = malloc(sizeof(shash_node_t));
+
 	if (new_node == NULL)
 		return (NULL);
 
