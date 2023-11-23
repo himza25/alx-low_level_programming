@@ -1,25 +1,35 @@
-# Makefile for compiling 'school' executable with specified rules and variables
-
+# Define gcc as the compiler.
 CC = gcc
-SRC = main.c school.c
-OBJ = $(SRC:.c=.o)
-NAME = school
-CFLAGS = -Wall -Werror -Wextra -pedantic
-RM = /bin/rm -f
 
+# Source files are main.c and school.c.
+SRC = main.c school.c
+
+# Object files are derived from the source files by replacing the .c extension with .o.
+OBJ = $(SRC:.c=.o)
+
+# The name of the final executable is 'school'.
+NAME = school
+
+# Compiler flags include warnings and standards compliance.
+CFLAGS = -Wall -Werror -Wextra -pedantic
+
+# Declare 'phony' targets to inform make that these targets do not represent files.
 .PHONY: all clean oclean fclean re
 
-all: $(NAME)
+# 'all' is the default target. It depends on the header file and the object files and builds the executable.
+all: m.h $(OBJ)
+		$(CC) $(OBJ) -o $(NAME)
 
-$(NAME): $(OBJ) m.h
-	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
-
+# The 'clean' target removes any editor backup files and the executable.
 clean:
-	$(RM) *~ $(NAME)
+		$(RM) *~ $(NAME)
 
+# The 'oclean' target removes the object files.
 oclean:
-	$(RM) $(OBJ)
+		$(RM) $(OBJ)
 
+# The 'fclean' target calls the 'clean' target and then the 'oclean' target, removing all compiled files.
 fclean: clean oclean
 
+# The 're' target forces a recompilation of all source files by calling 'fclean' followed by 'all'.
 re: fclean all
