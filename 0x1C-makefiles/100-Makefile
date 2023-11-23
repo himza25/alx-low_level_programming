@@ -1,0 +1,36 @@
+# Advanced Makefile with constraints on variable usage.
+
+NAME = school
+SRC = main.c school.c
+OBJ = $(SRC:.c=.o)
+CC = gcc
+CFLAGS = -Wall -Werror -Wextra -pedantic
+
+# Compile command with a variable to prevent direct use of $(CC) and $(CFLAGS)
+COMPILE = $(CC) $(CFLAGS)
+
+# Implicit rule for compiling C files to prevent the use of %.o: %.c
+.c.o:
+	@$(COMPILE) -c $< -o $@
+
+# Default rule for building the executable.
+all: $(NAME)
+
+$(NAME): $(OBJ)
+	@$(COMPILE) $(OBJ) -o $(NAME)
+
+# Cleaning rules using a variable to limit the use of $(RM)
+clean:
+	@$(RM) *~ $(NAME)
+
+oclean:
+	@$(RM) $(OBJ)
+
+fclean: clean oclean
+
+re: fclean all
+
+# Special rule to check for the existence of the header file.
+$(OBJ): m.h
+
+.PHONY: all clean oclean fclean re
