@@ -1,0 +1,34 @@
+# This Makefile builds the 'school' executable with specified CFLAGS and provides various cleanup rules.
+
+CC = gcc
+CFLAGS = -Wall -Werror -Wextra -pedantic
+SRC = $(wildcard *.c)
+OBJ = $(SRC:.c=.o)
+NAME = school
+RM = rm -f
+
+# Rule to compile updated source files only.
+%.o: %.c
+		$(CC) $(CFLAGS) -c $< -o $@
+
+# Default rule for building the executable.
+all: $(NAME)
+
+$(NAME): $(OBJ)
+		$(CC) $(OBJ) -o $(NAME)
+
+# Clean Emacs and Vim temporary files and the executable.
+clean:
+		$(RM) *~ $(NAME)
+
+# Clean object files.
+oclean:
+		$(RM) $(OBJ)
+
+# Perform a full cleanup.
+fclean: clean oclean
+
+# Force a recompilation of all source files.
+re: fclean all
+
+.PHONY: all clean oclean fclean re
