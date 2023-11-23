@@ -1,34 +1,31 @@
-# This Makefile compiles the 'school' program, cleans temporary files, and manages object files.
+# This Makefile builds the 'school' executable and provides rules for cleaning up.
 
 CC = gcc
-SRC = $(wildcard *.c)
+SRC = main.c school.c
 OBJ = $(SRC:.c=.o)
 NAME = school
 RM = rm -f
 
-# The default 'all' rule
-all: $(NAME)
-
-# Link the program
-$(NAME): $(OBJ)
-	$(CC) $(OBJ) -o $(NAME)
-
-# Pattern rule for object files
+# Rule to compile source files only if they have been updated.
 %.o: %.c
-	$(CC) -c $< -o $@
+		$(CC) -c $< -o $@
 
-# Clean Emacs and Vim temporary files along with the executable
+# The 'all' rule for building the executable.
+all: $(OBJ)
+		$(CC) $(OBJ) -o $(NAME)
+
+# The 'clean' rule for removing Emacs and Vim temporary files along with the executable.
 clean:
-	$(RM) *~ $(NAME)
+		$(RM) *~ $(NAME)
 
-# Clean object files
+# The 'oclean' rule for removing object files.
 oclean:
-	$(RM) $(OBJ)
+		$(RM) $(OBJ)
 
-# Full clean: temporary files, executable, and object files
+# The 'fclean' rule for full cleanup: temporary files, executable, and object files.
 fclean: clean oclean
 
-# Rebuild the project from scratch
+# The 're' rule for forcing recompilation of all source files.
 re: fclean all
 
 .PHONY: all clean oclean fclean re
