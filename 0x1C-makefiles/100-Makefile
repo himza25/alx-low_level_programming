@@ -1,29 +1,19 @@
-# Advanced Makefile with constraints for the 'school' executable.
-
 CC = gcc
 SRC = main.c school.c
+OBJ = $(SRC:.c=.o)
 NAME = school
 CFLAGS = -Wall -Werror -Wextra -pedantic
 
-# Create a variable for the compile command to use CFLAGS without directly referencing it.
-COMPILE = $(CC) $(CFLAGS)
-
 .PHONY: all clean oclean fclean re
 
-# The main target depends on the header files and the source files.
-# Using automatic variables to avoid direct use of $(CC) and $(OBJ).
-all: m.h $(SRC)
-		$(CC) -c $(SRC)
-		$(CC) *.o -o $(NAME)
-		@echo "Compiled '$(NAME)' successfully!"
+all: m.h $(OBJ)
+		$(CC) $(OBJ) -o $(NAME)
 
 clean:
-		@echo "Cleaning..."
-		@-rm -f *~ $(NAME)
+		$(RM) *~ $(NAME)
 
 oclean:
-		@echo "Removing object files..."
-		@-rm -f *.o
+		$(RM) $(OBJ)
 
 fclean: clean oclean
 
