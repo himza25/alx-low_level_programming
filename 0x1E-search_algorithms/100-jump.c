@@ -18,7 +18,7 @@ size_t min(size_t a, size_t b)
  * @array: Pointer to the first element of the array to search in
  * @size: Number of elements in the array
  * @value: Value to search for
- * Return: The first index value is located or -1 if not found or array's NULL
+ * Return: First index value is located or -1 if not found or array's NULL
  */
 int jump_search(int *array, size_t size, int value)
 {
@@ -37,7 +37,7 @@ int jump_search(int *array, size_t size, int value)
 	}
 
 	printf("Value found between indexes [%lu] and [%lu]\n",
-			prev, min(next, size - 1));
+		   prev, min(next, size - 1));
 
 	while (prev < min(next, size))
 	{
