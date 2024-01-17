@@ -1,50 +1,44 @@
 #include "search_algos.h"
-#include <math.h>
 
 /**
- * jump_list - searches for a value in an array of
- * integers using the Jump search algorithm
- *
- * @list: input list
- * @size: size of the array
- * @value: value to search in
- * Return: index of the number
+ * jump_list - Searches for a value in a sorted list of integers using
+ *             the Jump search algorithm.
+ * @list: Pointer to the head of the list to search in.
+ * @size: Number of nodes in the list.
+ * @value: Value to search for.
+ * Return: Pointer to the first node where value is located or NULL.
  */
 listint_t *jump_list(listint_t *list, size_t size, int value)
 {
-	size_t index, k, m;
-	listint_t *prev;
+	size_t jump_step = (size_t)sqrt(size);
+	listint_t *prev = list, *current = list;
+	size_t i;
 
-	if (list == NULL || size == 0)
+	if (!list)
 		return (NULL);
 
-	m = (size_t)sqrt((double)size);
-	index = 0;
-	k = 0;
-
-	do {
-		prev = list;
-		k++;
-		index = k * m;
-
-		while (list->next && list->index < index)
-			list = list->next;
-
-		if (list->next == NULL && index != list->index)
-			index = list->index;
-
-		printf("Value checked at index [%d] = [%d]\n", (int)index, list->n);
-
-	} while (index < size && list->next && list->n < value);
-
-	printf("Value found between indexes ");
-	printf("[%d] and [%d]\n", (int)prev->index, (int)list->index);
-
-	for (; prev && prev->index <= list->index; prev = prev->next)
+	/* Jumping through the list */
+	for (i = 0; i < size && current->n < value; i += jump_step)
 	{
-		printf("Value checked at index [%d] = [%d]\n", (int)prev->index, prev->n);
+		prev = current;
+		for (size_t j = 0; j < jump_step && current->next; j++)
+			current = current->next;
+
+		printf("Value checked at index [%lu] = [%d]\n",
+		       current->index, current->n);
+	}
+
+	/* Linear search in the sublist */
+	printf("Value found between indexes [%lu] and [%lu]\n",
+	       prev->index, current->index);
+	while (prev && prev->index <= current->index)
+	{
+		printf("Value checked at index [%lu] = [%d]\n",
+		       prev->index, prev->n);
 		if (prev->n == value)
 			return (prev);
+
+		prev = prev->next;
 	}
 
 	return (NULL);
