@@ -1,9 +1,8 @@
 #ifndef SEARCH_ALGOS_H
 #define SEARCH_ALGOS_H
-
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h> // Needed for sqrt() in jump search
+#include <math.h>
 
 /**
  * struct listint_s - singly linked list
@@ -39,7 +38,7 @@ typedef struct skiplist_s
     struct skiplist_s *express;
 } skiplist_t;
 
-// Function prototypes
+
 int linear_search(int *array, size_t size, int value);
 int binary_search(int *array, size_t size, int value);
 int jump_search(int *array, size_t size, int value);
